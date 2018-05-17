@@ -14,6 +14,10 @@ struct Node {
 	void addTail(struct Node** head_ref, int new_key);
 	void insertNode(struct Node* prev_node, int new_data);
 	void removeNode(struct Node **head_ref, struct Node *remove);
-	//void removeTail();
-	//void removeHead();
+	void removeTail(struct Node **head_ref);
+	void removeHead(struct Node **head_ref);
+	void findKey(struct Node **head_ref, int seeknumber);
+	void findIndex(struct Node **head_ref, int seekindex);
+
+
 	//void removeElement();

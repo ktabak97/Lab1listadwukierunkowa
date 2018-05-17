@@ -94,44 +94,74 @@ void removeNode(struct Node **head_ref, struct Node *remove)
 	{
 		remove->prev->next = remove->next;
 	}
-	
+
+	cout << "Usunieto element o indeksie " << remove->key << endl;
 	free(remove);
-	cout << "Usunieto element" << endl;
+
 	return;
 }
 
-void removeHead(struct Node)
-
-/*
-void removeElement(int numer)
+void removeHead(struct Node **head_ref) 
 {
-	if (numer == 1)
-	{
-		Element *temp = pierwszy;
-		pierwszy = temp->nastepny;
-	}
+	struct Node *remove = *head_ref;
+	*head_ref = remove->next;
 
-	if (numer > 1)
-	{
-		int j = 1;
-		Element *temp = pierwszy;
-
-		while (temp)
-		{
-			if ((j + 1) == numer) break;
-			temp = temp->nastepny;
-			j++;
-		}
-
-		if (temp->nastepny->nastepny == 0)
-			temp->nastepny = 0;
-
-		else
-			temp->nastepny = temp->nastepny->nastepny;
-	}
+	cout << "Usunieto glowe o indeksie " << remove->key << endl;
+	free(remove);
+	return;
 }
-*/
 
+void removeTail(struct Node **head_ref)
+{
+	struct Node *remove = *head_ref;
+
+	while (remove->next != NULL)
+	{
+		remove = remove->next;
+	}
+	remove->prev->next = NULL;
+
+	cout << "Usunieto ogon o indeksie " << remove->key << endl;	
+	free(remove);
+	return;
+}
+
+void findKey(struct Node **head_ref, int seeknumber)
+{
+	struct Node *find = *head_ref;
+	int licznik = 0;
+	while (find->next != NULL)
+	{
+		if (find->key == seeknumber)
+		{
+			licznik++;
+		}
+		find = find->next;
+		
+	}
+	
+	cout << "Element o indeksie " << seeknumber<< " pojawil sie " << licznik << " razy." << endl;
+	return;
+}
+
+void findIndex(struct Node **head_ref, int seekindex)
+{
+	struct Node *find = *head_ref;
+
+	//for ();
+	while (find->next != NULL)
+	{
+		if (find->key == seekindex)
+		{
+			
+		}
+		find = find->next;
+
+	}
+
+	cout << "Element o indeksie " << seekindex << " to " << find << endl;
+	return;
+}
 
 void displayList(struct Node *node)
 {

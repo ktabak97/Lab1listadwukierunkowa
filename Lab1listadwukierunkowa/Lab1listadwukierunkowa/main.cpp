@@ -18,6 +18,34 @@ int main()
 
 	displayList(head);
 
+	removeHead(&head);
+	displayList(head);
+
+	addHead(&head, 1);
+	addHead(&head, 9);
+	displayList(head);
+	removeTail(&head);
+	displayList(head);
+
+	addTail(&head, 7);
+	displayList(head);
+
+	addHead(&head, 3);
+	addHead(&head, 5);
+	addHead(&head, 3);
+	addHead(&head, 3);
+	addHead(&head, 3);
+	addHead(&head, 3);
+	addTail(&head, 2);
+
+
+	displayList(head);
+
+	findKey(&head, 3);
+	findKey(&head, 5);
+	findKey(&head, 7);
+
+
 	getchar();
 	return 0;
 }
