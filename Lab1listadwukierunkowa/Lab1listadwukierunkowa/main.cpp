@@ -44,8 +44,10 @@ int main()
 	findKey(&head, 3);
 	findKey(&head, 5);
 	findKey(&head, 7);
+	findKey(&head, 2);
 
-
+	findIndex(&head, 6);
+	findIndex(&head, 8);
 	getchar();
 	return 0;
 }

@@ -126,18 +126,21 @@ void removeTail(struct Node **head_ref)
 	return;
 }
 
-void findKey(struct Node **head_ref, int seeknumber)
+void findKey(Node **head_ref, int seeknumber)
 {
 	struct Node *find = *head_ref;
 	int licznik = 0;
+	if (find->key == seeknumber)
+	{
+		licznik++;
+	}
 	while (find->next != NULL)
 	{
+		find = find->next;
 		if (find->key == seeknumber)
 		{
 			licznik++;
-		}
-		find = find->next;
-		
+		}			
 	}
 	
 	cout << "Element o indeksie " << seeknumber<< " pojawil sie " << licznik << " razy." << endl;
@@ -148,18 +151,12 @@ void findIndex(struct Node **head_ref, int seekindex)
 {
 	struct Node *find = *head_ref;
 
-	//for ();
-	while (find->next != NULL)
+	for (int i = 0; i < seekindex; i++) 
 	{
-		if (find->key == seekindex)
-		{
-			
-		}
 		find = find->next;
-
 	}
-
-	cout << "Element o indeksie " << seekindex << " to " << find << endl;
+	
+	cout << "Element o indeksie " << seekindex << " to " << find->key << endl;
 	return;
 }
 
